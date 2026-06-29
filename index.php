@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I LOVE YOU ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sawirka -->
+    <div class="photo">
+        <img src="photo.png" alt="Love">
+    </div>
+
+    <!-- Wadnaha -->
+    <div id="heart"></div>
+
+    <!-- Qoraalka -->
+    <h1>I LOVE YOU ❤️</h1>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
