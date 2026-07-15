@@ -47,6 +47,9 @@ function animate() {
     function toggleMessage(){
 
     document.querySelector(".message-box").classList.toggle("open");
+        function showMessage() {
+    document.getElementById("messageBox").style.display = "block";
+}
 
 }
 
