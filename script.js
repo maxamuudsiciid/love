@@ -44,15 +44,9 @@ function animate() {
 
         item.style.transform = `translate(${move}px, ${-move}px)`;
     });
-  function showMessage() {
+  function toggleMessage(){
 
-    const box = document.getElementById("messageBox");
-
-    if (box.style.display === "none" || box.style.display === "") {
-        box.style.display = "block";
-    } else {
-        box.style.display = "none";
-    }
+    document.querySelector(".message-box").classList.toggle("open");
 
 }
 
