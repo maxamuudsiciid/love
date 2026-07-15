@@ -49,6 +49,15 @@ function animate() {
     document.querySelector(".message-box").classList.toggle("open");
 
 }
+    function showMessage() {
+    const box = document.getElementById("messageBox");
+
+    if (box.style.display === "none" || box.style.display === "") {
+        box.style.display = "block";
+    } else {
+        box.style.display = "none";
+    }
+}
 
     requestAnimationFrame(animate);
 }
