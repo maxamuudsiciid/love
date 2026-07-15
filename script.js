@@ -44,12 +44,15 @@ function animate() {
 
         item.style.transform = `translate(${move}px, ${-move}px)`;
     });
-    function toggleMessage(){
+  function showMessage() {
 
-    document.querySelector(".message-box").classList.toggle("open");
-        function showMessage() {
-    document.getElementById("messageBox").style.display = "block";
-}
+    const box = document.getElementById("messageBox");
+
+    if (box.style.display === "none" || box.style.display === "") {
+        box.style.display = "block";
+    } else {
+        box.style.display = "none";
+    }
 
 }
 
