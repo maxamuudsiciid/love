@@ -44,6 +44,11 @@ function animate() {
 
         item.style.transform = `translate(${move}px, ${-move}px)`;
     });
+    function toggleMessage(){
+
+    document.querySelector(".message-box").classList.toggle("open");
+
+}
 
     requestAnimationFrame(animate);
 }
