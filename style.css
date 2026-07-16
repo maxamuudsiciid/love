@@ -65,3 +65,40 @@ h1{
         opacity:.4;
     }
 }
+.love-btn{
+    position:absolute;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    padding:15px 35px;
+    background:#ff2d55;
+    color:#fff;
+    border:none;
+    border-radius:40px;
+    font-size:20px;
+    cursor:pointer;
+    box-shadow:0 0 20px red;
+    z-index:200;
+}
+
+#messageBox{
+    display:none;
+    position:absolute;
+    top:360px;
+    left:50%;
+    transform:translateX(-50%);
+    width:320px;
+    background:rgba(255,255,255,.95);
+    color:#111;
+    padding:18px;
+    border-radius:15px;
+    text-align:center;
+    z-index:200;
+    box-shadow:0 0 20px red;
+}
+
+#messageBox p{
+    margin:0;
+    font-size:18px;
+    line-height:1.7;
+}
