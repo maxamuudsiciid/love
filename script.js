@@ -1,59 +1,83 @@
-const heart = document.getElementById("heart");
+const heart=document.getElementById("heart");
 
-// Samee qoraalo badan oo wadnaha ah
-for (let i = 0; i < 120; i++) {
+const total=180;
 
-    const span = document.createElement("span");
-    span.className = "heart-text";
-    span.innerHTML = "❤️";
+for(let i=0;i<total;i++){
 
-    const angle = Math.random() * Math.PI * 2;
-    const radius = 120 * Math.sqrt(Math.random());
+let t=(Math.PI*2*i)/total;
 
-    const x = Math.cos(angle) * radius;
-    const y = Math.sin(angle) * radius;
+let x=16*Math.pow(Math.sin(t),3);
 
-    span.dataset.x = x;
-    span.dataset.y = y;
-    span.dataset.delay = Math.random() * 6;
+let y=13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t);
 
-    span.style.left = (250 + x) + "px";
-    span.style.top = (250 + y) + "px";
+x*=14;
+y*=14;
 
-    heart.appendChild(span);
+const text=document.createElement("div");
+
+text.className="heart-text";
+
+text.innerHTML="I LOVE YOU";
+
+text.style.left=(250+x)+"px";
+text.style.top=(250-y)+"px";
+
+text.dataset.x=x;
+text.dataset.y=y;
+text.dataset.delay=i*0.2;
+
+heart.appendChild(text);
+
 }
 
-function animate() {
+function animate(){
 
-    const items = document.querySelectorAll(".heart-text");
-    const time = Date.now() / 400;
+const items=document.querySelectorAll(".heart-text");
 
-    items.forEach(item => {
+const time=Date.now()/400;
 
-        const x = parseFloat(item.dataset.x);
-        const y = parseFloat(item.dataset.y);
-        const d = parseFloat(item.dataset.delay);
+items.forEach(item=>{
 
-        const move = Math.sin(time + d) * 6;
+const x=parseFloat(item.dataset.x);
 
-        item.style.transform =
-            `translate(${move}px,${-move}px)`;
+const y=parseFloat(item.dataset.y);
 
-    });
+const d=parseFloat(item.dataset.delay);
 
-    requestAnimationFrame(animate);
+const move=Math.sin(time+d)*6;
+
+item.style.transform=`translate(${move}px,${-move}px)`;
+
+});
+
+requestAnimationFrame(animate);
+
 }
 
 animate();
 
-function showMessage() {
+function createFlower(){
 
-    const box = document.getElementById("messageBox");
+const flower=document.createElement("div");
 
-    if (box.style.display === "block") {
-        box.style.display = "none";
-    } else {
-        box.style.display = "block";
-    }
+flower.className="flower";
+
+const arr=["🌹","🌸","🌺","🌷","💐"];
+
+flower.innerHTML=arr[Math.floor(Math.random()*arr.length)];
+
+flower.style.left=Math.random()*window.innerWidth+"px";
+
+flower.style.animationDuration=(3+Math.random()*4)+"s";
+
+document.body.appendChild(flower);
+
+setTimeout(()=>{
+
+flower.remove();
+
+},7000);
 
 }
+
+setInterval(createFlower,400);
