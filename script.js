@@ -22,6 +22,8 @@ for (let i = 0; i < total; i++) {
     text.style.left = (250 + x) + "px";
     text.style.top = (250 - y) + "px";
 
+    text.dataset.x = x;
+    text.dataset.y = y;
     text.dataset.delay = i * 0.2;
 
     heart.appendChild(text);
@@ -34,35 +36,16 @@ function animate() {
 
     items.forEach(item => {
 
+        const x = parseFloat(item.dataset.x);
+        const y = parseFloat(item.dataset.y);
         const d = parseFloat(item.dataset.delay);
+
         const move = Math.sin(time + d) * 6;
 
         item.style.transform = `translate(${move}px, ${-move}px)`;
-
     });
 
     requestAnimationFrame(animate);
 }
-
-function createFlower() {
-
-    const flower = document.createElement("div");
-    flower.classList.add("flower");
-
-    const flowers = ["🌹","🌸","🌺","🌷","💐"];
-
-    flower.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
-
-    flower.style.left = Math.random() * window.innerWidth + "px";
-    flower.style.animationDuration = (3 + Math.random() * 4) + "s";
-
-    document.body.appendChild(flower);
-
-    setTimeout(() => {
-        flower.remove();
-    }, 7000);
-}
-
-setInterval(createFlower, 400);
 
 animate();
